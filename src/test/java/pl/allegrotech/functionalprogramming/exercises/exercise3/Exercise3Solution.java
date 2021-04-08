@@ -1,6 +1,5 @@
 package pl.allegrotech.functionalprogramming.exercises.exercise3;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,9 +8,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Disabled
-class Exercise3 {
-    
+class Exercise3Solution {
+
     private static final List<String> words = Arrays.asList("One", "Abc", "BCD");
 
     @Test
@@ -53,13 +51,11 @@ class Exercise3 {
     }
 
     private static Comparator<String> compareInDirection(int direction) {
-        // do zaimplementowania
-        return null;
+        return (x, y) -> direction * x.compareTo(y);
     }
 
     public static Comparator<String> reverse(Comparator<String> comparator) {
-        // do zaimplementowania
-        return null;
+        return (x, y) -> comparator.compare(y, x);
     }
 
 }

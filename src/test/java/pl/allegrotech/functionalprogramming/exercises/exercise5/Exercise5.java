@@ -1,5 +1,6 @@
 package pl.allegrotech.functionalprogramming.exercises.exercise5;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.util.Map;
 import static java.math.RoundingMode.HALF_UP;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled
 class Exercise5 {
 
     private final List<Invoice> invoices = Arrays.asList(

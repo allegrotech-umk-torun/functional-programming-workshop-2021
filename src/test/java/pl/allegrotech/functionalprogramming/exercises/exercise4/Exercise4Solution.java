@@ -1,6 +1,5 @@
 package pl.allegrotech.functionalprogramming.exercises.exercise4;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -8,8 +7,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Disabled
-class Exercise4 {
+class Exercise4Solution {
 
     static class Driver {
 
@@ -51,8 +49,11 @@ class Exercise4 {
     }
 
     private boolean isAudiDriver(Driver driver) {
-        // do zaimplementowania, postaraj się wykorzystać metody z klasy Optional
-        return false;
+        return Optional.of(driver)
+                .map(Driver::getCar)
+                .flatMap(Car::getName)
+                .filter(name -> name.equals("Audi"))
+                .isPresent();
     }
 
 }
